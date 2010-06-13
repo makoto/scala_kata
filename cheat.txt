@@ -8,6 +8,19 @@ res17: Int = 3
 scala>  field.size   
 res19: Int = 5
 
+val input = """
+4 4
+*...
+....
+.*..
+....
+3 5
+**...
+.....
+.*...
+0 0
+"""
+
 scala> var x = List.fromString(input, '\n')
 x: List[String] = List(4 4, *..., ...., .*.., ...., 3 5, **..., ....., .*..., 0 0)
 
