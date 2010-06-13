@@ -38,18 +38,15 @@ class Field(
   var input: List[String]
   ) 
 {
-  var body = new Array[Array[String]](height, width)
+  val body = new Array[Array[String]](height, width)
   var counter = 0;
   for (i <- first to last )
   {
-    var line = input(i).split("").drop(1)
-    println(i + ":" + input(i))
-    
-    body(counter) = line
+    body(counter) = input(i).split("").drop(1)
     counter = counter + 1;
   }
   
-  var body2 = new Array[Array[String]](height, width)
+  val body2 = new Array[Array[String]](height, width)
   for (i <- 0 to body.size - 1)
   {
     for (j <- 0 to body(i).size - 1)
@@ -78,11 +75,7 @@ class Field(
   }
   
   def printHeader = println("height:" + height + " width:" + width + " bodyFirst:" + first + " bodyLast:" + last)
-
-  def printOriginalBody = {
-    for (i <- first to last)
-      println(input(i))
-  }
+  def printOriginalBody = for (i <- first to last) println(input(i))
   def printArrayBody = printArray(body)
   def printArrayBody2 = printArray(body2)
   
@@ -95,13 +88,7 @@ class Field(
   }
   
   def withinBoundary(x :Int, y :Int) = {
-    if (x < 0 || y < 0 || x > height - 1 || y > width - 1 ) 
-    {
-       false
-    }
-    else{
-       true
-    }
+    if (x < 0 || y < 0 || x > height - 1 || y > width - 1 ) false else true
   }
 }
 
