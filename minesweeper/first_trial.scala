@@ -79,7 +79,7 @@ class Field(
   def printArrayBody = printArray(body)
   def printArrayBody2 = printArray(body2)
   
-  def printArray(array: Array[Array[String]]) = {
+  private def printArray(array: Array[Array[String]]) = {
     for (i <- 0 until array.size)
     {
       array(i).foreach((a: String) => print(a))
@@ -87,7 +87,7 @@ class Field(
     }
   }
   
-  def withinBoundary(x :Int, y :Int) = {
+  private def withinBoundary(x :Int, y :Int) = {
     if (x < 0 || y < 0 || x > height - 1 || y > width - 1 ) false else true
   }
 }
